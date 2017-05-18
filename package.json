@@ -22,6 +22,6 @@
     "passport-facebook-token": "^3.3.0"
   },
   "engines": {
-    "node": "7.4.0",
+    "node": "7.4.0"
   },
 }
