@@ -13,7 +13,7 @@ var bodyParser = require('body-parser');
 require('./auth/passport-facebook-token')(passport); // pass passport for configuration
 
 // database =============================
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.MONGODB_URI);
 mongoose.Promise = global.Promise;
 
 // set up our express application
