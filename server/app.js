@@ -1,4 +1,5 @@
 // initialize  =================================================================
+require('dotenv').config();
 var express = require('express');
 var app = express();
 var port = process.env.PORT || 8080;
@@ -12,8 +13,7 @@ var bodyParser = require('body-parser');
 require('./auth/passport-facebook-token')(passport); // pass passport for configuration
 
 // database =============================
-var configDB = require('./config/database.js');
-mongoose.connect(configDB.url);
+mongoose.connect(process.env.DATABASE_URL);
 mongoose.Promise = global.Promise;
 
 // set up our express application
