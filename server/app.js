@@ -28,4 +28,3 @@ require('./routes')(app);
 
 // launch ======================================================================
 app.listen(port);
-console.log('The magic happens on port ' + port);

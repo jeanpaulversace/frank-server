@@ -1,12 +1,11 @@
 var User = require('../user/user');
 var FriendRequest = require('../friend-request/friend-request');
-var responseHandler = require('../response-handler');
+var responseHandler = require('../../utils/response-handler');
 
 var controller = {};
 
 // User - Add Friends Functionality
 controller.index = function (req, res) {
-
 
   var usersSentFriendRequest = [];
   var usersReceivedFriendRequest = [];
@@ -48,7 +47,6 @@ controller.index = function (req, res) {
     // Find users that match sent phone numbers but excludes friends, users the current user has sent a friend request to,
     // and users that have sent a friend request to the current user
     return User.find().nin('_id',excludedUsers).in('phoneNumber',req.body.phoneNumbers).exec();
-    // return User.find({ $and : [ {'phoneNumber': { $in : req.body.phoneNumbers}}, {'_id': { $nin: excludedUsers}} ]}).exec()
 
   }).then(responseHandler.respondWithResult(res))
   .catch(responseHandler.handleError(res));

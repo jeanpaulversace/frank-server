@@ -1,6 +1,6 @@
 var User = require('../user');
 var ObjectId = require('mongoose').Types.ObjectId;
-var responseHandler = require('../../response-handler');
+var responseHandler = require('../../../utils/response-handler');
 
 var controller = {};
 
